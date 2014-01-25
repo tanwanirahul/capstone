@@ -23,21 +23,6 @@
 extern "C" {
 #endif
 
-#define INSTRUCTION_SPECIFIER_FIELDS \
-  uint16_t operands;
-
-#define INSTRUCTION_IDS     \
-  uint16_t instructionIDs;
-
-#include <stdio.h>
-
-#include "X86DisassemblerDecoderCommon.h"
-
-#undef INSTRUCTION_SPECIFIER_FIELDS
-#undef INSTRUCTION_IDS
-
-#include <stdint.h>
-
 /*
  * Accessor functions for various fields of an Intel instruction
  */
@@ -641,28 +626,6 @@ typedef struct InternalInstruction {
 
   const struct OperandSpecifier *operands;
 } InternalInstruction;
-
-/* decodeInstruction - Decode one instruction and store the decoding results in
- *   a buffer provided by the consumer.
- * @param insn      - The buffer to store the instruction in.  Allocated by the
- *                    consumer.
- * @param reader    - The byteReader_t for the bytes to be read.
- * @param readerArg - An argument to pass to the reader for storing context
- *                    specific to the consumer.  May be NULL.
- * @param logger    - The dlog_t to be used in printing status messages from the
- *                    disassembler.  May be NULL.
- * @param loggerArg - An argument to pass to the logger for storing context
- *                    specific to the logger.  May be NULL.
- * @param startLoc  - The address (in the reader's address space) of the first
- *                    byte in the instruction.
- * @param mode      - The mode (16-bit, 32-bit, 64-bit) to decode in.
- * @return          - Nonzero if there was an error during decode, 0 otherwise.
- */
-int decodeInstruction(struct InternalInstruction* insn,
-                      byteReader_t reader,
-                      const void* readerArg,
-                      uint64_t startLoc,
-                      DisassemblerMode mode);
 
 //const char *x86DisassemblerGetInstrName(unsigned Opcode, const void *mii);
 

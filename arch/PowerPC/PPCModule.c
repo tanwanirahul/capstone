@@ -1,11 +1,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013 */
 
-#include "../../utils.h"
-#include "../../MCRegisterInfo.h"
-#include "PPCDisassembler.h"
-#include "PPCInstPrinter.h"
-#include "PPCMapping.h"
+#include "precomp.h"
+
+#ifdef CAPSTONE_HAS_POWERPC
 
 void enable_powerpc() {};
 
@@ -55,3 +53,5 @@ void PPC_enable(void)
 	// support this arch
 	all_arch |= (1 << CS_ARCH_PPC);
 }
+
+#endif

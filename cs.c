@@ -1,14 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <capstone.h>
-
-#include "utils.h"
-#include "MCRegisterInfo.h"
+#include "precomp.h"
 
 cs_err (*arch_init[MAX_ARCH])(cs_struct *) = { NULL };
 cs_err (*arch_option[MAX_ARCH]) (cs_struct *, cs_opt_type, size_t value) = { NULL };

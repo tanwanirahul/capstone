@@ -15,17 +15,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <ctype.h>
-#include <inttypes.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "precomp.h"
 
-#include "../../utils.h"
-#include "../../MCInst.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-#include "X86Mapping.h"
+#ifdef CAPSTONE_HAS_X86
 
 #define markup(x) ""
 
@@ -481,3 +473,4 @@ void X86_ATT_printInst(MCInst *MI, SStream *OS, void *info)
 	}
 }
 
+#endif

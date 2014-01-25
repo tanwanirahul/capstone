@@ -14,19 +14,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <inttypes.h>
-#include <stdlib.h>
-#include <stdio.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "MipsInstPrinter.h"
-#include "../../MCInst.h"
-#include "../../utils.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-#include "MipsMapping.h"
-
-#include "MipsInstPrinter.h"
+#ifdef CAPSTONE_HAS_MIPS
 
 static void printUnsignedImm(MCInst *MI, int opNum, SStream *O);
 static bool printAliasInstr(MCInst *MI, SStream *O, void *info);
@@ -420,3 +410,4 @@ static bool printAlias(MCInst *MI, SStream *OS)
 #define PRINT_ALIAS_INSTR
 #include "MipsGenAsmWriter.inc"
 
+#endif

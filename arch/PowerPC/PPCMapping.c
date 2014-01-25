@@ -1,13 +1,9 @@
 /* Capstone Unified Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "../../include/ppc.h"
-#include "../../utils.h"
-
-#include "PPCMapping.h"
+#ifdef CAPSTONE_HAS_POWERPC
 
 #define GET_INSTRINFO_ENUM
 #include "PPCGenInstrInfo.inc"
@@ -1511,3 +1507,5 @@ ppc_reg PPC_map_register(unsigned int r)
 	// cannot find this register
 	return 0;
 }
+
+#endif

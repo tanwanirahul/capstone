@@ -1,13 +1,9 @@
 /* Capstone Unified Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "../../include/mips.h"
-#include "../../utils.h"
-
-#include "MipsMapping.h"
+#ifdef CAPSTONE_HAS_MIPS
 
 #define GET_INSTRINFO_ENUM
 #include "MipsGenInstrInfo.inc"
@@ -2103,3 +2099,5 @@ mips_reg Mips_map_register(unsigned int r)
 	// cannot find this register
 	return 0;
 }
+
+#endif

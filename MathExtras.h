@@ -17,12 +17,6 @@
 #ifndef CS_LLVM_SUPPORT_MATHEXTRAS_H
 #define CS_LLVM_SUPPORT_MATHEXTRAS_H
 
-#include <stdint.h>
-
-#ifdef _MSC_VER
-# include <intrin.h>
-#endif
-
 // NOTE: The following support functions use the _32/_64 extensions instead of
 // type overloading so that signed and unsigned integers can be used without
 // ambiguity.

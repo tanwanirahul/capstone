@@ -11841,7 +11841,6 @@ static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
   //assert(Bits != 0 && "Cannot print this instruction.");
   SStream_concat(O, "%s", AsmStrs+(Bits & 16383)-1);
 
-
   //	printf("F0: %lu\n", (Bits >> 14) & 63);
   // Fragment 0 encoded into 5 bits for 25 unique commands.
   switch ((Bits >> 14) & 63) {

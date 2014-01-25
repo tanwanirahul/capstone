@@ -16,13 +16,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdarg.h>   /* for va_*()       */
-#include <stdlib.h>   /* for exit()       */
-#include <string.h>   /* for memset()     */
+#include "precomp.h"
 
-#include "../../cs_priv.h"
-
-#include "X86DisassemblerDecoder.h"
+#ifdef CAPSTONE_HAS_X86
 
 #include "X86GenDisassemblerTables.inc"
 
@@ -1851,3 +1847,5 @@ int decodeInstruction(struct InternalInstruction* insn,
 
 	return 0;
 }
+
+#endif

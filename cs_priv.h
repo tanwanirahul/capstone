@@ -4,11 +4,6 @@
 #ifndef CS_PRIV_H
 #define CS_PRIV_H
 
-#include <capstone.h>
-
-#include "MCInst.h"
-#include "SStream.h"
-
 typedef void (*Printer_t)(MCInst *MI, SStream *OS, void *info);
 
 // function to be called after Printer_t

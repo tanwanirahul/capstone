@@ -1,10 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdlib.h>
-#include <string.h>
-
-#include "utils.h"
+#include "precomp.h"
 
 // return the position of a string in a list of strings
 // or -1 if given string is not in the list

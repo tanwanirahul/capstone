@@ -17,10 +17,6 @@
 #ifndef CS_LLVM_TARGET_ARM_ARMADDRESSINGMODES_H
 #define CS_LLVM_TARGET_ARM_ARMADDRESSINGMODES_H
 
-#include <stdbool.h>
-
-#include "../../MathExtras.h"
-
 /// ARM_AM - ARM Addressing Mode Stuff
 typedef enum ARM_AM_ShiftOpc {
 	ARM_AM_no_shift = 0,

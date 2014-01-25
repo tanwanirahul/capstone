@@ -17,22 +17,37 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <inttypes.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "../../cs_priv.h"
-
-#include "X86Disassembler.h"
-#include "X86DisassemblerDecoderCommon.h"
-#include "X86DisassemblerDecoder.h"
-#include "../../MCInst.h"
-#include "X86Mapping.h"
+#ifdef CAPSTONE_HAS_X86
 
 #define GET_REGINFO_ENUM
 #include "X86GenRegisterInfo.inc"
 
 #define GET_INSTRINFO_ENUM
 #include "X86GenInstrInfo.inc"
+
+/* decodeInstruction - Decode one instruction and store the decoding results in
+*   a buffer provided by the consumer.
+* @param insn      - The buffer to store the instruction in.  Allocated by the
+*                    consumer.
+* @param reader    - The byteReader_t for the bytes to be read.
+* @param readerArg - An argument to pass to the reader for storing context
+*                    specific to the consumer.  May be NULL.
+* @param logger    - The dlog_t to be used in printing status messages from the
+*                    disassembler.  May be NULL.
+* @param loggerArg - An argument to pass to the logger for storing context
+*                    specific to the logger.  May be NULL.
+* @param startLoc  - The address (in the reader's address space) of the first
+*                    byte in the instruction.
+* @param mode      - The mode (16-bit, 32-bit, 64-bit) to decode in.
+* @return          - Nonzero if there was an error during decode, 0 otherwise.
+*/
+int decodeInstruction(struct InternalInstruction* insn,
+    byteReader_t reader,
+    const void* readerArg,
+    uint64_t startLoc,
+    DisassemblerMode mode);
 
 struct reader_info {
 	const uint8_t *code;
@@ -636,3 +651,5 @@ bool X86_getInstruction(csh ud, const uint8_t *code, size_t code_len, MCInst *in
 		return result;
 	}
 }
+
+#endif

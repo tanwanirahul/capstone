@@ -1,13 +1,9 @@
 /* Capstone Unified Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <string.h>
+#include "precomp.h"
 
-#include "X86Mapping.h"
-#include "X86DisassemblerDecoder.h"
-
-#include "../../utils.h"
-#include "../../include/x86.h"
+#ifdef CAPSTONE_HAS_X86
 
 static x86_reg sib_base_map[] = {
 	X86_REG_INVALID,
@@ -6679,3 +6675,5 @@ void X86_insn_combine(cs_struct *h, cs_insn *insn, cs_insn *prev)
 		prev->detail->x86.prefix[0] = prefix;
 	}
 }
+
+#endif

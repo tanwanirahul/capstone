@@ -11,10 +11,6 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#ifdef _MSC_VER
-#pragma warning(disable:4201)
-#endif
-
 //> ARM64 shift type
 typedef enum arm64_shifter {
 	ARM64_SFT_INVALID = 0,
