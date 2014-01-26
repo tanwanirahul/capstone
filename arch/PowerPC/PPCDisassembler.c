@@ -10,18 +10,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// DEBUG
-#include <stdlib.h>
+#include "precomp.h"
 
-#include "../../cs_priv.h"
-
-#include "../../SubtargetFeature.h"
-#include "../../MCInst.h"
-#include "../../MCInstrDesc.h"
-#include "../../MCFixedLenDisassembler.h"
-#include "../../MCRegisterInfo.h"
-#include "../../MCDisassembler.h"
-#include "../../MathExtras.h"
+#ifdef CAPSTONE_HAS_POWERPC
 
 #define GET_REGINFO_ENUM
 #include "PPCGenRegisterInfo.inc"
@@ -299,7 +290,7 @@ static DecodeStatus getInstruction(MCInst *MI,
 	return MCDisassembler_Fail;
 }
 
-bool PPC_getInstruction(csh ud, unsigned char *code, size_t code_len, MCInst *instr, uint16_t *size, uint64_t address, void *info)
+bool PPC_getInstruction(csh ud, const uint8_t *code, size_t code_len, MCInst *instr, uint16_t *size, uint64_t address, void *info)
 {
 	DecodeStatus status = getInstruction(instr,
 			code, code_len,
@@ -335,3 +326,5 @@ void PPC_init(MCRegisterInfo *MRI)
 			PPCSubRegIdxLists, 6,
 			0);
 }
+
+#endif

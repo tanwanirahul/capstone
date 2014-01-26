@@ -20,11 +20,6 @@
 #ifndef CS_LLVM_AARCH64_BASEINFO_H
 #define CS_LLVM_AARCH64_BASEINFO_H
 
-#include <ctype.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <string.h>
-
 /// Instances of this class can perform bidirectional mapping from random
 /// identifier strings to operand encodings. For example "MSR" takes a named
 /// system-register which must be encoded somehow and decoded for printing. This

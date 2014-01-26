@@ -1,11 +1,9 @@
 /* Capstone Disassembler Engine */
 /* By Dang Hoang Vu <danghvu@gmail.com> 2013 */
 
-#include "../../cs_priv.h"
-#include "../../MCRegisterInfo.h"
-#include "ARMDisassembler.h"
-#include "ARMInstPrinter.h"
-#include "ARMMapping.h"
+#include "precomp.h"
+
+#ifdef CAPSTONE_HAS_ARM
 
 static cs_err init(cs_struct *ud)
 {
@@ -62,3 +60,5 @@ void ARM_enable(void)
 	// support this arch
 	all_arch |= (1 << CS_ARCH_ARM);
 }
+
+#endif

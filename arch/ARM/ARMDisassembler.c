@@ -10,23 +10,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <inttypes.h>
+#include "precomp.h"
 
-#include "ARMAddressingModes.h"
-#include "ARMBaseInfo.h"
-#include "../../SubtargetFeature.h"
-#include "../../MCFixedLenDisassembler.h"
-#include "../../MCInst.h"
-#include "../../MCInstrDesc.h"
-#include "../../MCRegisterInfo.h"
-#include "../../LEB128.h"
-#include "../../MCDisassembler.h"
-#include "../../cs_priv.h"
-
-#include "ARMDisassembler.h"
+#ifdef CAPSTONE_HAS_ARM
 
 //#define GET_REGINFO_ENUM
 //#include "X86GenRegisterInfo.inc"
@@ -5050,3 +5036,4 @@ static DecodeStatus DecodeMRRC2(MCInst *Inst, unsigned Val,
 	return S;
 }
 
+#endif

@@ -1,7 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include "MCInstrDesc.h"
+#include "precomp.h"
 
 /// isPredicate - Set if this is one of the operands that made up of
 /// the predicate operand that controls an isPredicable() instruction.

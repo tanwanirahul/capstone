@@ -1,13 +1,9 @@
 /* Capstone Unified Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "../../include/arm.h"
-#include "../../cs_priv.h"
-
-#include "ARMMapping.h"
+#ifdef CAPSTONE_HAS_ARM
 
 #define GET_INSTRINFO_ENUM
 #include "ARMGenInstrInfo.inc"
@@ -2800,3 +2796,5 @@ bool ARM_rel_branch(cs_struct *h, unsigned int id)
 		return false;
 	}
 }
+
+#endif

@@ -1,13 +1,9 @@
 /* Capstone Unified Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// debug
-#include <string.h>
+#include "precomp.h"
 
-#include "../../include/arm64.h"
-#include "../../utils.h"
-
-#include "AArch64Mapping.h"
+#ifdef CAPSTONE_HAS_AARCH64
 
 #define GET_INSTRINFO_ENUM
 #include "AArch64GenInstrInfo.inc"
@@ -3528,3 +3524,5 @@ arm64_reg AArch64_map_insn(const char *name)
 
 	return (i != -1)? i : ARM64_REG_INVALID;
 }
+
+#endif

@@ -14,7 +14,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include "MCRegisterInfo.h"
+#include "precomp.h"
 
 /// DiffListIterator - Base iterator class that can traverse the
 /// differentially encoded register and regunit lists in DiffLists.

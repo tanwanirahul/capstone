@@ -16,19 +16,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// DEBUG
-#include <stdlib.h>
+#include "precomp.h"
 
-#include "../../cs_priv.h"
-
-#include "../../SubtargetFeature.h"
-#include "../../MCInst.h"
-#include "../../MCInstrDesc.h"
-#include "../../MCFixedLenDisassembler.h"
-#include "../../MCRegisterInfo.h"
-#include "../../MCDisassembler.h"
-
-#include "AArch64BaseInfo.h"
+#ifdef CAPSTONE_HAS_AARCH64
 
 // Forward-declarations used in the auto-generated files.
 static DecodeStatus DecodeGPR64RegisterClass(MCInst *Inst, unsigned RegNo,
@@ -289,7 +279,7 @@ static DecodeStatus _getInstruction(cs_struct *ud, MCInst *MI,
 	return MCDisassembler_Fail;
 }
 
-bool AArch64_getInstruction(csh ud, unsigned char *code, size_t code_len, MCInst *instr, uint16_t *size, uint64_t address, void *info)
+bool AArch64_getInstruction(csh ud, const uint8_t *code, size_t code_len, MCInst *instr, uint16_t *size, uint64_t address, void *info)
 {
 	DecodeStatus status = _getInstruction((cs_struct *)ud, instr,
 			code, code_len,
@@ -1628,3 +1618,4 @@ static DecodeStatus DecodeSHLLInstruction(MCInst *Inst, unsigned Insn,
 	return MCDisassembler_Success;
 }
 
+#endif

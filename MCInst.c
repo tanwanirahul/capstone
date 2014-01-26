@@ -1,12 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#include "MCInst.h"
-#include "utils.h"
+#include "precomp.h"
 
 void MCInst_Init(MCInst *inst)
 {

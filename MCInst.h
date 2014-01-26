@@ -19,10 +19,10 @@
 #ifndef CS_MCINST_H
 #define CS_MCINST_H
 
-#include <stdint.h>
-#include <stdbool.h>
-
-#include "include/capstone.h"
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable:4201)
+#endif
 
 typedef struct MCInst MCInst;
 typedef struct cs_struct cs_struct;
@@ -167,5 +167,9 @@ int MCInst_addOperand(MCInst *inst, MCOperand *Op);
 
 // This addOperand2 function doesnt free Op
 int MCInst_addOperand2(MCInst *inst, MCOperand *Op);
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
 
 #endif

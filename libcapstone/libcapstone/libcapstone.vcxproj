@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\arch\AArch64\AArch64BaseInfo.c" />
+    <ClCompile Include="..\..\arch\AArch64\AArch64Disassembler.c" />
+    <ClCompile Include="..\..\arch\AArch64\AArch64InstPrinter.c" />
+    <ClCompile Include="..\..\arch\AArch64\AArch64Mapping.c" />
+    <ClCompile Include="..\..\arch\AArch64\AArch64Module.c" />
+    <ClCompile Include="..\..\arch\ARM\ARMDisassembler.c" />
+    <ClCompile Include="..\..\arch\ARM\ARMInstPrinter.c" />
+    <ClCompile Include="..\..\arch\ARM\ARMMapping.c" />
+    <ClCompile Include="..\..\arch\ARM\ARMModule.c" />
+    <ClCompile Include="..\..\arch\Mips\MipsMapping.c" />
+    <ClCompile Include="..\..\arch\Mips\MipsDisassembler.c" />
+    <ClCompile Include="..\..\arch\Mips\MipsInstPrinter.c" />
+    <ClCompile Include="..\..\arch\Mips\MipsModule.c" />
+    <ClCompile Include="..\..\arch\PowerPC\PPCMapping.c" />
+    <ClCompile Include="..\..\arch\PowerPC\PPCModule.c" />
+    <ClCompile Include="..\..\arch\PowerPC\PPCDisassembler.c" />
+    <ClCompile Include="..\..\arch\PowerPC\PPCInstPrinter.c" />
+    <ClCompile Include="..\..\arch\X86\X86Mapping.c" />
+    <ClCompile Include="..\..\arch\X86\X86Module.c" />
+    <ClCompile Include="..\..\arch\X86\X86ATTInstPrinter.c" />
+    <ClCompile Include="..\..\arch\X86\X86Disassembler.c" />
+    <ClCompile Include="..\..\arch\X86\X86DisassemblerDecoder.c" />
+    <ClCompile Include="..\..\arch\X86\X86IntelInstPrinter.c" />
+    <ClCompile Include="..\..\cs.c">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\..\MCInst.c" />
+    <ClCompile Include="..\..\MCInstrDesc.c" />
+    <ClCompile Include="..\..\MCRegisterInfo.c" />
+    <ClCompile Include="..\..\SStream.c" />
+    <ClCompile Include="..\..\utils.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\arch\AArch64\AArch64BaseInfo.h" />
+    <ClInclude Include="..\..\arch\AArch64\AArch64Disassembler.h" />
+    <ClInclude Include="..\..\arch\AArch64\AArch64InstPrinter.h" />
+    <ClInclude Include="..\..\arch\ARM\ARMAddressingModes.h" />
+    <ClInclude Include="..\..\arch\ARM\ARMBaseInfo.h" />
+    <ClInclude Include="..\..\arch\ARM\ARMDisassembler.h" />
+    <ClInclude Include="..\..\arch\ARM\ARMInstPrinter.h" />
+    <ClInclude Include="..\..\arch\Mips\MipsDisassembler.h" />
+    <ClInclude Include="..\..\arch\Mips\MipsInstPrinter.h" />
+    <ClInclude Include="..\..\arch\PowerPC\PPCDisassembler.h" />
+    <ClInclude Include="..\..\arch\PowerPC\PPCInstPrinter.h" />
+    <ClInclude Include="..\..\arch\PowerPC\PPCPredicates.h" />
+    <ClInclude Include="..\..\arch\X86\X86Disassembler.h" />
+    <ClInclude Include="..\..\arch\X86\X86DisassemblerDecoder.h" />
+    <ClInclude Include="..\..\arch\X86\X86DisassemblerDecoderCommon.h" />
+    <ClInclude Include="..\..\arch\X86\X86InstPrinter.h" />
+    <ClInclude Include="..\..\cs_priv.h" />
+    <ClInclude Include="..\..\include\arm.h" />
+    <ClInclude Include="..\..\include\arm64.h" />
+    <ClInclude Include="..\..\include\capstone.h" />
+    <ClInclude Include="..\..\include\mips.h" />
+    <ClInclude Include="..\..\include\ppc.h" />
+    <ClInclude Include="..\..\include\x86.h" />
+    <ClInclude Include="..\..\LEB128.h" />
+    <ClInclude Include="..\..\MathExtras.h" />
+    <ClInclude Include="..\..\MCDisassembler.h" />
+    <ClInclude Include="..\..\MCFixedLenDisassembler.h" />
+    <ClInclude Include="..\..\MCInst.h" />
+    <ClInclude Include="..\..\MCInstrDesc.h" />
+    <ClInclude Include="..\..\MCRegisterInfo.h" />
+    <ClInclude Include="..\..\SStream.h" />
+    <ClInclude Include="..\..\SubtargetFeature.h" />
+    <ClInclude Include="..\..\utils.h" />
+    <ClInclude Include="precomp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\arch\AArch64\AArch64GenAsmWriter.inc" />
+    <None Include="..\..\arch\AArch64\AArch64GenDisassemblerTables.inc" />
+    <None Include="..\..\arch\AArch64\AArch64GenInstrInfo.inc" />
+    <None Include="..\..\arch\AArch64\AArch64GenRegisterInfo.inc" />
+    <None Include="..\..\arch\AArch64\AArch64GenSubtargetInfo.inc" />
+    <None Include="..\..\arch\ARM\ARMGenAsmWriter.inc" />
+    <None Include="..\..\arch\ARM\ARMGenDisassemblerTables.inc" />
+    <None Include="..\..\arch\ARM\ARMGenInstrInfo.inc" />
+    <None Include="..\..\arch\ARM\ARMGenRegisterInfo.inc" />
+    <None Include="..\..\arch\ARM\ARMGenSubtargetInfo.inc" />
+    <None Include="..\..\arch\Mips\MipsGenAsmWriter.inc" />
+    <None Include="..\..\arch\Mips\MipsGenDisassemblerTables.inc" />
+    <None Include="..\..\arch\Mips\MipsGenInstrInfo.inc" />
+    <None Include="..\..\arch\Mips\MipsGenRegisterInfo.inc" />
+    <None Include="..\..\arch\Mips\MipsGenSubtargetInfo.inc" />
+    <None Include="..\..\arch\PowerPC\PPCGenAsmWriter.inc" />
+    <None Include="..\..\arch\PowerPC\PPCGenDisassemblerTables.inc" />
+    <None Include="..\..\arch\PowerPC\PPCGenInstrInfo.inc" />
+    <None Include="..\..\arch\PowerPC\PPCGenRegisterInfo.inc" />
+    <None Include="..\..\arch\PowerPC\PPCGenSubtargetInfo.inc" />
+    <None Include="..\..\arch\X86\X86GenAsmWriter.inc" />
+    <None Include="..\..\arch\X86\X86GenAsmWriter1.inc" />
+    <None Include="..\..\arch\X86\X86GenDisassemblerTables.inc" />
+    <None Include="..\..\arch\X86\X86GenInstrInfo.inc" />
+    <None Include="..\..\arch\X86\X86GenRegisterInfo.inc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DB9728FA-5E5A-4123-8B0E-36DC107066B5}</ProjectGuid>
+    <TemplateGuid>{0a049372-4c4d-4ea0-a64e-dc6ad88ceca1}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration>Win8.1 Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>libcapstone</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <TargetVersion>WindowsV6.3</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsApplicationForDrivers8.1</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;strcasecmp=_stricmp;inline=__forceinline;CAPSTONE_HAS_X86;CAPSTONE_HAS_ARM;CAPSTONE_HAS_AARCH64;CAPSTONE_HAS_PPC;CAPSTONE_HAS_MIPS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\include;..\..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precomp.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

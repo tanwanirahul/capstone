@@ -1,14 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <capstone.h>
-
-#include "utils.h"
-#include "MCRegisterInfo.h"
+#include "precomp.h"
 
 #define INSN_CACHE_SIZE 64
 

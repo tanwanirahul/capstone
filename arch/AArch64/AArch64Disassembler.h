@@ -4,12 +4,6 @@
 #ifndef CS_AARCH64_DISASSEMBLER_H
 #define CS_AARCH64_DISASSEMBLER_H
 
-#include <stdint.h>
-
-#include "../../include/capstone.h"
-#include "../../MCRegisterInfo.h"
-#include "../../MCInst.h"
-
 void AArch64_init(MCRegisterInfo *MRI);
 
 bool AArch64_getInstruction(csh ud, const uint8_t *code, size_t code_len,

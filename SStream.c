@@ -1,12 +1,7 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdint.h>
-#include <stdarg.h>
-#include <stdio.h>
-
-#include "SStream.h"
-#include "cs_priv.h"
+#include "precomp.h"
 
 void SStream_Init(SStream *ss)
 {

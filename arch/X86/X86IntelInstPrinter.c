@@ -15,18 +15,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <ctype.h>
-#include <inttypes.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "precomp.h"
 
-#include "../../utils.h"
-#include "../../MCInst.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-
-#include "X86Mapping.h"
+#ifdef CAPSTONE_HAS_X86
 
 static void printMemReference(MCInst *MI, unsigned Op, SStream *O);
 
@@ -492,3 +483,4 @@ static void printMemReference(MCInst *MI, unsigned Op, SStream *O)	// qqq
 #define PRINT_ALIAS_INSTR
 #include "X86GenAsmWriter1.inc"
 
+#endif

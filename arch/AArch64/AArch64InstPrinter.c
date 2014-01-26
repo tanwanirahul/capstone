@@ -14,19 +14,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <inttypes.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "precomp.h"
 
-#include "AArch64InstPrinter.h"
-#include "AArch64BaseInfo.h"
-#include "../../utils.h"
-#include "../../MCInst.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-#include "../../MathExtras.h"
-
-#include "AArch64Mapping.h"
+#ifdef CAPSTONE_HAS_AARCH64
 
 static char *getRegisterName(unsigned RegNo);
 static void printOperand(MCInst *MI, unsigned OpNo, SStream *O);
@@ -827,3 +817,4 @@ void AArch64_printInst(MCInst *MI, SStream *O, void *Info)
 		printInstruction(MI, O, Info);
 }
 
+#endif

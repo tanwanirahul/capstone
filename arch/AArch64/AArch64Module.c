@@ -1,11 +1,9 @@
 /* Capstone Disassembler Engine */
 /* By Dang Hoang Vu <danghvu@gmail.com> 2013 */
 
-#include "../../utils.h"
-#include "../../MCRegisterInfo.h"
-#include "AArch64Disassembler.h"
-#include "AArch64InstPrinter.h"
-#include "AArch64Mapping.h"
+#include "precomp.h"
+
+#ifdef CAPSTONE_HAS_AARCH64
 
 void enable_arm64() {}
 
@@ -50,3 +48,5 @@ void AArch64_enable(void)
 	// support this arch
 	all_arch |= (1 << CS_ARCH_ARM64);
 }
+
+#endif

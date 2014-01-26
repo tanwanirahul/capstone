@@ -4,9 +4,6 @@
 #ifndef CS_UTILS_H
 #define CS_UTILS_H
 
-#include "include/capstone.h"
-#include "cs_priv.h"
-
 // threshold number, so above this number will be printed in hexa mode
 #define HEX_THRESHOLD 9
 

@@ -14,20 +14,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "precomp.h"
 
-#include "PPCInstPrinter.h"
-#include "PPCPredicates.h"
-#include "../../MCInst.h"
-#include "../../utils.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-#include "../../MathExtras.h"
-#include "PPCMapping.h"
-
-//#include "PPCMapping.h"
+#ifdef CAPSTONE_HAS_POWERPC
 
 static const char *getRegisterName(unsigned RegNo);
 static void printOperand(MCInst *MI, unsigned OpNo, SStream *O);
@@ -546,3 +535,4 @@ static void printOperand(MCInst *MI, unsigned OpNo, SStream *O)
 //#define PRINT_ALIAS_INSTR
 #include "PPCGenAsmWriter.inc"
 
+#endif

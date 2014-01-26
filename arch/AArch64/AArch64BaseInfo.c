@@ -14,13 +14,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include "../../utils.h"
+#include "precomp.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "AArch64BaseInfo.h"
-
+#ifdef CAPSTONE_HAS_AARCH64
 char *NamedImmMapper_toString(NamedImmMapper *N, uint32_t Value, bool *Valid)
 {
 	unsigned i;
@@ -979,4 +975,4 @@ bool A64Imms_isLogicalImmBits(unsigned RegWidth, uint32_t Bits, uint64_t *Imm)
 
 	return true;
 }
-
+#endif

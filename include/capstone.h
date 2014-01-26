@@ -8,16 +8,17 @@
 extern "C" {
 #endif
 
+#ifdef _MSC_VER
+#pragma once
+#pragma warning(push)
+#pragma warning(disable:4201)
+#endif
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
-#ifdef _MSC_VER
-#pragma warning(disable:4201)
-#pragma warning(disable:4100)
-#endif
 
 // Capstone API version
 #define CS_API_MAJOR 2
@@ -400,6 +401,10 @@ int cs_op_index(csh handle, cs_insn *insn, unsigned int op_type,
 
 #ifdef __cplusplus
 }
+#endif
+
+#ifdef _MSC_VER
+#pragma warning(pop)
 #endif
 
 #endif

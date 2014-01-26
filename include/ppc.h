@@ -11,10 +11,6 @@ extern "C" {
 #include <stdint.h>
 #include <stdbool.h>
 
-#ifdef _MSC_VER
-#pragma warning(disable:4201)
-#endif
-
 //> PPC branch codes for some branch instructions
 typedef enum ppc_bc {
   PPC_BC_LT       = (0 << 5) | 12,

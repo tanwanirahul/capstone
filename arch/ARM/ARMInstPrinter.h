@@ -17,10 +17,6 @@
 #ifndef CS_ARMINSTPRINTER_H
 #define CS_ARMINSTPRINTER_H
 
-#include "../../MCInst.h"
-#include "../../MCRegisterInfo.h"
-#include "../../SStream.h"
-
 void ARM_printInst(MCInst *MI, SStream *O, void *Info);
 void ARM_post_printer(csh handle, cs_insn *pub_insn, char *mnem);
 

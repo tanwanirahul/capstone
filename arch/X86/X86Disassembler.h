@@ -77,24 +77,6 @@
 #ifndef CS_X86_DISASSEMBLER_H
 #define CS_X86_DISASSEMBLER_H
 
-#include <stdint.h>
-#include <stdbool.h>
-
-#include "../../include/capstone.h"
-
-#include "../../MCInst.h"
-
-#define INSTRUCTION_SPECIFIER_FIELDS \
-  uint16_t operands;
-
-#define INSTRUCTION_IDS               \
-  uint16_t instructionIDs;
-
-#include "X86DisassemblerDecoderCommon.h"
-
-#undef INSTRUCTION_SPECIFIER_FIELDS
-#undef INSTRUCTION_IDS
-
 bool X86_getInstruction(csh handle, const uint8_t *code, size_t code_len,
 		MCInst *instr, uint16_t *size, uint64_t address, void *info);
 

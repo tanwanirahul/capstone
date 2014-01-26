@@ -11851,7 +11851,6 @@ static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
   // assert(Bits != 0 && "Cannot print this instruction.");
   SStream_concat(O, "%s", AsmStrs+(Bits & 16383)-1);
 
-
   // Fragment 0 encoded into 6 bits for 33 unique commands.
   //printf("Frag-0: %"PRIu64"\n", (Bits >> 14) & 63);
   switch ((Bits >> 14) & 63) {

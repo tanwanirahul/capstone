@@ -14,21 +14,9 @@
 /* Capstone Disassembler Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013> */
 
-#include <stdio.h>	// DEBUG
-#include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
-#include <inttypes.h> 
+#include "precomp.h"
 
-#include "ARMInstPrinter.h"
-#include "ARMAddressingModes.h"
-#include "ARMBaseInfo.h"
-#include "ARMDisassembler.h"
-#include "../../MCInst.h"
-#include "../../SStream.h"
-#include "../../MCRegisterInfo.h"
-#include "../../utils.h"
-#include "ARMMapping.h"
+#ifdef CAPSTONE_HAS_ARM
 
 #define GET_SUBTARGETINFO_ENUM
 #include "ARMGenSubtargetInfo.inc"
@@ -2361,3 +2349,5 @@ static void printVectorListFourSpaced(MCInst *MI, unsigned OpNum, SStream *O)
 	}
 	SStream_concat(O, "}");
 }
+
+#endif
