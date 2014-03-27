@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+
+# Capstone Disassembler Engine
+# By Nguyen Anh Quynh <aquynh@gmail.com>, 2013>
+
+# Note: to cross-compile "nix32" on Linux, package gcc-multilib is required.
+
+# Generate setting.mk
+echo "# Capstone configure file - AUTO GEN, DO NOT MODIFY" > setting.mk
+
+if [ "$(uname)" == "SunOS" ]; then
+echo "MAKE=gmake" >> setting.mk
+echo "INSTALL_BIN=ginstall" >> setting.mk
+echo "CC=gcc" >> setting.mk
+fi
+
+if [[ "$(uname)" == *BSD* ]]; then
+echo "MAKE=gmake" >> setting.mk
+echo "PREFIX=/usr/local" >> setting.mk
+fi
+
+case "$1" in
+  "" ) ;;
+  "nix32" ) echo "CFLAGS=-m32 LDFLAGS=-m32" >> setting.mk;;
+  "cross-win32" ) echo "CROSS=i686-w64-mingw32-" >> setting.mk;;
+  "cross-win64" ) echo "CROSS=x86_64-w64-mingw32-" >> setting.mk;;
+  "cygwin-mingw32" ) echo "CROSS=i686-pc-mingw32-" >> setting.mk;;
+  "cygwin-mingw64" ) echo "CROSS=x86_64-w64-mingw32-" >> setting.mk;;
+  "clang" ) echo "CC=clang" >> setting.mk;;
+  "gcc" ) echo "CC=gcc" >> setting.mk;;
+  * ) echo "Usage: make.sh [nix32|cross-win32|cross-win64|cygwin-mingw32|cygwin-mingw64|clang|gcc]"; exit 1;;
+esac

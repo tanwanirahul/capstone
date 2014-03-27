@@ -3,6 +3,7 @@
 
 include config.mk
 include pkgconfig.mk	# package version
+include setting.mk
 
 ifeq ($(CROSS),)
 CC ?= cc
