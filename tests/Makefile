@@ -64,7 +64,7 @@ all: $(BINARY)
 clean:
 	rm -rf $(OBJS) $(SOURCES:.c=) *.exe *.static lib$(LIBNAME).*
 
-$(BINARY): $(OBJS)
+$(BINARY): ../config.mk ../setting.mk $(OBJS)
 
 %$(BIN_EXT): %.o
 	${CC} $(CFLAGS) $(LDFLAGS) $< -O3 -Wall -l$(LIBNAME) -o $@

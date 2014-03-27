@@ -213,7 +213,7 @@ all: $(LIBRARY) $(ARCHIVE) $(PKGCFGF)
 $(LIBRARY): $(LIBOBJ)
 	$(CC) $(LDFLAGS) $(LIBOBJ) -o $(LIBRARY)
 
-$(LIBOBJ): config.mk
+$(LIBOBJ): config.mk setting.mk
 
 $(LIBOBJ_ARM): $(DEP_ARM)
 $(LIBOBJ_ARM64): $(DEP_ARM64)
