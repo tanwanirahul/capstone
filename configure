@@ -21,7 +21,7 @@ fi
 
 case "$1" in
   "" ) ;;
-  "nix32" ) echo "CFLAGS=-m32 LDFLAGS=-m32" >> setting.mk;;
+  "nix32" ) echo "CFLAGS=-m32" >> setting.mk;echo "LDFLAGS=-m32" >> setting.mk;;
   "cross-win32" ) echo "CROSS=i686-w64-mingw32-" >> setting.mk;;
   "cross-win64" ) echo "CROSS=x86_64-w64-mingw32-" >> setting.mk;;
   "cygwin-mingw32" ) echo "CROSS=i686-pc-mingw32-" >> setting.mk;;

@@ -2,6 +2,7 @@
 # By Nguyen Anh Quynh <aquynh@gmail.com>, 2013>
 
 include ../config.mk
+include ../setting.mk
 
 INCDIR = ../include
 LIBDIR = ..
