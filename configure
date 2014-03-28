@@ -19,6 +19,17 @@ echo "MAKE=gmake" >> setting.mk
 echo "PREFIX=/usr/local" >> setting.mk
 fi
 
+if [[ "$(uname)" == "Darwin" ]]; then
+# By default, suppose that Brew is installed & use Brew path for pkgconfig file
+LIBDATADIR=/usr/local
+# is this Macport case
+if [ -f /opt/local/bin/port ]
+then
+LIBDATADIR=/opt/local
+fi
+echo "LIBDATADIR=${LIBDATADIR}" >> setting.mk
+fi
+
 case "$1" in
   "" ) ;;
   "nix32" ) echo "CFLAGS=-m32" >> setting.mk;echo "LDFLAGS=-m32" >> setting.mk;;

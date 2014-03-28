@@ -42,7 +42,7 @@ LIBDIR = $(DESTDIR)$(PREFIX)/lib64
 endif
 endif
 
-LIBDATADIR = $(LIBDIR)
+LIBDATADIR ?= $(LIBDIR)
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 LIBDATADIR = $(DESTDIR)$(PREFIX)/libdata
@@ -164,13 +164,6 @@ AR_EXT = a
 ifneq ($(USE_SYS_DYN_MEM),yes)
 # remove string check because OSX kernel complains about missing symbols
 CFLAGS += -D_FORTIFY_SOURCE=0
-endif
-# By default, suppose that Brew is installed & use Brew path for pkgconfig file
-PKGCFCGDIR = /usr/local/lib/pkgconfig
-# is Macport installed instead?
-ifneq (,$(wildcard /opt/local/bin/port))
-# then correct the path for pkgconfig file
-PKGCFCGDIR = /opt/local/lib/pkgconfig
 endif
 else
 # Cygwin?
