@@ -184,7 +184,7 @@ AR_EXT = dll.a
 CFLAGS := $(CFLAGS:-fPIC=)
 # On Windows we need the shared library to be executable
 else
-# Linux, *BSD
+# Linux, *BSD, Solaris
 EXT = so
 VERSION_EXT = $(EXT).$(API_MAJOR)
 AR_EXT = a
