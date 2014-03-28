@@ -8,20 +8,11 @@ source setting.mk
 
 function build {
 	${MAKE} clean
-
-	if [ ${CC}x != x ]; then
-		${MAKE} CC=$CC
-	else
-		${MAKE}
-	fi
+	${MAKE}
 }
 
 function install {
-	if [ ${CC}x != x ]; then
-		${MAKE} CC=$CC install
-	else
-		${MAKE} install
-	fi
+	${MAKE} install
 }
 
 case "$1" in
