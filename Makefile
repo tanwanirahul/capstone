@@ -28,7 +28,13 @@ endif
 
 LDFLAGS += -shared
 
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S), Darwin)
+PREFIX ?= /usr/local
+else
 PREFIX ?= /usr
+endif
+
 DESTDIR ?=
 INCDIR = $(DESTDIR)$(PREFIX)/include
 
@@ -42,7 +48,6 @@ endif
 endif
 
 LIBDATADIR = $(LIBDIR)
-UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), FreeBSD)
 LIBDATADIR = $(DESTDIR)$(PREFIX)/libdata
 endif
@@ -206,13 +211,6 @@ ifneq ($(USE_SYS_DYN_MEM),yes)
 # remove string check because OSX kernel complains about missing symbols
 CFLAGS += -D_FORTIFY_SOURCE=0
 endif
-# By default, suppose that Brew is installed & use Brew path for pkgconfig file
-PKGCFCGDIR = /usr/local/lib/pkgconfig
-# is Macport installed instead?
-ifneq (,$(wildcard /opt/local/bin/port))
-# then correct the path for pkgconfig file
-PKGCFCGDIR = /opt/local/lib/pkgconfig
-endif
 else
 # Cygwin?
 IS_CYGWIN := $(shell $(CC) -dumpmachine | grep -i cygwin | wc -l)
@@ -245,7 +243,7 @@ LIBRARY = lib$(LIBNAME).$(EXT)
 ARCHIVE = lib$(LIBNAME).$(AR_EXT)
 PKGCFGF = $(LIBNAME).pc
 
-.PHONY: all clean install uninstall dist
+.PHONY: all clean uninstall_legacy install uninstall dist
 
 all: $(LIBRARY) $(ARCHIVE) $(PKGCFGF)
 	$(MAKE) -C tests
@@ -303,6 +301,11 @@ uninstall:
 	rm -rf $(INCDIR)/$(LIBNAME)
 	rm -f $(LIBDIR)/lib$(LIBNAME).*
 	rm -f $(PKGCFCGDIR)/$(LIBNAME).pc
+
+uninstall_legacy:
+	rm -rf /usr/include/$(LIBNAME)
+	rm -f /usr/lib/lib$(LIBNAME).*
+	rm -f /usr/lib/pkgconfig/$(LIBNAME).pc
 
 clean:
 	rm -f $(LIBOBJ) lib$(LIBNAME).*
